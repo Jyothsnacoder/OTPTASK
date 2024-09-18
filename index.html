@@ -1,0 +1,64 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .subsec{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: 5%;
+        }
+       #mainbtn{
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: center;
+            align-items: center;
+            padding-top: 30%;
+        }
+        #btn{
+            border-radius: 100px;
+            box-shadow: 0px 0px 20px;
+            padding: 5px;
+            background-color: rgb(211, 192, 114);
+        }
+        #otp{
+            transform: translate(0px,0px,150px,100px);
+        }
+    </style>
+</head>
+<body>
+    <div class="button">  
+    <div id="mainbtn"><button id="btn" onclick="insertOTP()">Get your OTP</button></div>
+   <div class="subsec">
+    <h3 id="otp" onclick="getRandomColor()"></h3>
+    
+</div>
+    </div>
+    </div>
+</body>
+<script>
+    const div=document.getElementById("otp");
+    function insertOTP(){
+        let x=Math.floor(Math.random()*1000000);
+        div.innerHTML=x;}
+        function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+
+document.addEventListener('click', function() {
+ 
+  document.body.style.backgroundColor = getRandomColor();
+});
+
+
+</script>
+</html>-
